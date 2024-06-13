@@ -25,6 +25,7 @@ class TaskBank():
         ppf("initializing taskbank for" + month)
         self.db = TaskDB(config.default_db)
         self.table = config.default_table
+        self.db.create_table(table = self.table)
         self.tasks_id = self.db.get_id_list(mfrom=month,table=self.table)
         Task.counter = self.db.count_by_month(month, table=self.table) + (int(self.m)%10000)*1000
         ppf("loading all tasks done")
