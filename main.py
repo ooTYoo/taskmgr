@@ -32,7 +32,10 @@ def main ():
                 state = eval("TaskState." + menu_state[int(aa)])
             tbank.list_tasks(state)
             ppf("choose a task id")
-            tid = int(input("[id] = "))
+            try:
+                tid = int(input("[id] = "))
+            except:
+                continue
         elif a == '0':
             tid = tbank.create_new_tasks()
             tbank.manage_task(tid, 'start')

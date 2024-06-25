@@ -16,7 +16,7 @@ class TaskDB():
 
     def create_table(self, table=config.default_table):
         c = self.conn.cursor()
-        c.execute(f"DROP TABLE IF EXISTS {table}")
+        # c.execute(f"DROP TABLE IF EXISTS {table}")
         c.execute(f'''CREATE TABLE IF NOT EXISTS {table}(
                ID INT PRIMARY KEY NOT NULL,
                CREATING CHAR(27) NOT NULL,
